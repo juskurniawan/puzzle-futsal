@@ -1,0 +1,26 @@
+<?php
+include "../conn.php";
+
+$team   = $_POST['team'];
+$tgldp   = $_POST['tgldp'];
+$darijamdp   = $_POST['darijamdp'];
+
+
+
+//$query1=("select*from item where kode_item='$itembeli'"); 
+//$result1 = mysql_query ($query1);
+//$count1 = mysql_num_rows($result1);
+//while($data1=mysql_fetch_array($result1))
+	//		{$x=$data1['harga_item'];}
+//$tgl=date('d-m-Y');
+?>
+<?php    
+$query = mysql_query("INSERT INTO jadwal (id_jadwal,jadwalhari,tgldp,jadwaljam,team) VALUES 
+                      ('','$tgldp','$darijamdp','$team')");
+if ($query){
+	echo "<script>alert('Data Berhasil dimasukan!'); window.location = 'index.php'</script>";	
+} else {
+	echo "<script>alert('Data Gagal dimasukan!'); window.location = 'index.php'</script>";	
+
+}
+?>
